@@ -67,6 +67,7 @@
     .navbar-expand-lg .navbar-nav .nav-link {
         padding-right: .9rem;
         padding-left: .5rem;
+        margin-right: 0.5rem;
     }
 }
 .navbar-nav .nav-item .nav-link:after {
@@ -413,14 +414,18 @@ text-align: center;
 }
 
 .project-card img {
-    width: 100%;
-    height: auto;
+    width: 320px;
+    height: 160px;
     display: block;
 }
 
 .project-card h3 {
-    font-size: 1.2em;
+    font-size: 1em;
     margin: 15px;
+    margin-left: 0px;
+    border-left: 6px solid #28a745;
+    font-weight: 700;
+    padding-left: 4px;
 }
 
 .project-card p {
@@ -434,4 +439,158 @@ text-align: center;
     border-radius: 4px;
     font-size: 0.9em;
     transition: background 0.3s ease;
+}
+
+.navbar-dark .navbar-toggler {
+    color: #ffa500;
+    border-color: #ffa500;
+}
+
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23e1bb49' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+.project-card .desc{
+    font-size: 12px;
+    text-align: justify;
+    padding-bottom: 2rem;    
+}
+#ftco-nav1{
+    display: none !important;
+}
+@media (max-width:600px){
+    .heading-section h1.big {
+        top: -12px;
+        left: 178px;
+    }
+    .heading-section h2 {
+        text-align: center;
+    }
+    .navbar-nav{
+        background-color: orange;
+    }
+    .ownName {
+        font-size: 2rem;
+    }
+      .header-action-aria {
+            display: flex;
+        flex-direction: row;
+        margin-top: 40px;
+        gap: 15px;
+    }
+    
+.navbar-nav .nav-item .nav-link {
+    text-align: center;
+}
+}
+
+@media (max-width:400px){
+    .ownName {
+        font-size: 1.8rem;
+    }
+}
+
+.career-card {
+    border-left: 6px solid #0d6efd;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.career-card:hover {
+    transform: translateY(-5px);
+}
+
+.job-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0d6efd;
+}
+
+.job-description ul {
+    padding-left: 1rem;
+    margin-bottom: 0;
+}
+.contact-section {
+    background-color: #f5f5f5;
+    padding: 60px 20px;
+    text-align: left;
+}
+.contact-email a {
+    position: relative;
+    top: -3px;
+    font-size: 1.2rem;    
+}
+.contact-email a:hover {
+    color: orange;   
+}
+.contact-email i {
+    margin-right: 10px;
+    font-size: 1.5rem;    
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: orange;
+}
+
+@media (max-width: 576px) {
+    .social-icons {
+    margin-top: 15px;
+    }
+}
+.conHed{
+    font-weight: bold;
+}
+.con_des{
+    color: #111827;
+}
+.footer{
+    background-color: var(--color1);
+    background-image: url('../images/background2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.footer {
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.ownName {
+  display: inline-block;
+  animation: slideInFromRight 2s ease-out forwards;
+}
+.animate-buttons {
+  animation: slideUp 1s ease-out 0.5s forwards;
+  opacity: 0;
+}
+.view_pr a:hover{
+    color: orange;
 }

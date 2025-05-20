@@ -48,8 +48,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
             }
         });
     }
+    
     window.addEventListener("scroll", checkVisibility);
     checkVisibility();
+
+    const menuLinks = document.querySelectorAll(".nav-link");
+    const navColl = document.getElementById("ftco-nav");
+
+    menuLinks.forEach((link) => {
+        link.addEventListener("click", function() {
+            const bsCollapse = bootstrap.Collapse.getInstance(navColl);
+            if (bsCollapse) {
+                bsCollapse.hide();
+            }
+        })
+    })
+    
     
 
 });

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project Details</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/project.css">
+</head>
+<body>
+     <nav class="navbar navbar-dark navbar-expand-lg prjNav" id="navbar">
+      <div class="container">
+        <a
+          class="navbar-brand"
+          style="color: orange; font-weight: bold"
+          href="#"
+        >
+          Sumit Unhale
+        </a>
+        </button>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav nav ml-auto">
+            <li class="nav-item">
+              <a href="../index.html" class="nav-link"><span>Home Page</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+         <div id="project-content"></div>
+    </div>
+    <footer class="footer bg-dark text-white py-3 mt-auto">
+      <div class="container text-center">
+        <p class="mb-0">&copy; 2025 <span class="fw-bold">Sumit Unhale</span>. All rights reserved.</p>
+      </div>
+    </footer>
+ 
+
+  <script>
+   const projects = {
+      garage: {
+        title: "Garage Management System",
+        description: `
+          <p><b>A Garage Management System (GMS)</b> is designed to streamline and automate the daily operations of a garage or auto repair shop. The system helps manage customer vehicle records, ensuring accurate tracking of service history and maintenance schedules. It also handles customer appointments, reducing manual effort and avoiding booking conflicts.
+          <p>
+          With integrated inventory tracking, the system keeps a real-time record of parts and supplies, helping prevent shortages and overstocking. Service billing is simplified through automated invoice generation and payment tracking, enhancing both transparency and efficiency.
+          </p></p>
+          <ul>
+            <li>Customer & Vehicle Record Management</li>
+            <li>Appointment Scheduling System</li>
+            <li>Automated Service Billing & Invoicing</li>
+            <li>Service History Logs</li>
+            <li>Responsive and User-Friendly Interface</li>
+          </ul>
+        `,
+        technologies: ["React", "Javascript", "Nodejs", "Express", "Postgresql", "Docker"],
+        images: [
+          "../images/garage.png",
+          "../images/garage3.png",
+          "../images/garage1.png",
+          "../images/garage4.png",
+          "../images/garage5.png",
+          "../images/garage2.png"
+        ],
+        github_front: "https://github.com/SumitUnhale/Garage_frontend.git",
+        github_back: "https://github.com/SumitUnhale/Garage_Backend.git"
+      },
+      blackBoard: {
+        title: "EDUSTREAM- AN ONLINE TUTORING APP WITH SMART ON SCREEN WRITING AND MULTISTREAMING",
+        description: `
+          <p>
+            This project deals with the development of EduStream-An Application of detecting of hand gesture recognition for on screen writing in continuous video feed and streaming it to the Students for Online teaching.
+          </p>
+          <p>
+            The proposed project deals with the deep learning based approach for hand pose estimation to track the key points on the palm and then recognizing of gestures for writing on screen. The Machin learning model will be used for recognizing the gesture and the Python-OpenCV will be used to write content for online tutoring on the screen in continuous video feed.
+          </p>
+          <p>
+            Multiple gesture detection is implemented in the project for writing and clearing the screen. The Flask Web application is developed which will be used to generate the link with which students can join and visualize the stream. This can form as easy online tutorial system based on deep learning and hand gesture recognition.
+          </p>
+        `,
+        technologies: ["Python", "OpenCV", "Mediapipe", "Python Flask", "Tensorflow", "Docker"],
+        images: [
+          "../images/board1.png",
+          "../images/board2.png",
+          "../images/board3.png"
+        ],
+        // github_front: "https://github.com/SumitUnhale/Garage_frontend.git",
+        // github_back: "https://github.com/SumitUnhale/Garage_Backend.git"
+      }
+    };
+     const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const project = projects[id];
+
+    if (project) {
+      const techList = project.technologies.map((tech, i) => `<ul>${tech}</ul>`).join('');
+      const images = project.images.map(img => `<img class="image" src="${img}" alt="${project.title} Screenshot">`).join('');
+      const githubLink = project.github_front ? `<p><a href="${project.github_front}" target="_blank" class="github-link">🔗 GitHub Frontend</a><a href="${project.github_back}" target="_blank" class="github-link link2">🔗 GitHub Backend</a></p>` : '';
+
+
+      document.getElementById("project-content").innerHTML = `
+        <div class="project">
+          <h1 class="prjHed">${project.title}</h1>
+          ${project.description}
+          <h3>Technologies Used:</h3>
+          <ol class="technologies">${techList}</ol>
+          <h3>Screenshots:</h3>
+          <div class="screen">${images}</div>
+          <div class="text-end">${githubLink}</div>
+          <div class="prjBckDv"><a class="prjBck" href="../index.html">← Back to Projects</a></div>
+        </div>
+      `;
+
+      document.getElementById("backButton").onclick = () => window.history.back();
+    } else {
+      document.getElementById("project-content").innerHTML = "<p>Project not found.</p>";
+    }
+  </script>
+</body>
+</html>
