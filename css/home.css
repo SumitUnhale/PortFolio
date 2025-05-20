@@ -460,9 +460,19 @@ text-align: center;
     display: none !important;
 }
 @media (max-width:600px){
-    .heading-section h1.big {
-        top: -12px;
-        left: 178px;
+    #home-section {
+        padding-top: 140px;
+    }
+    .basic-edu{
+        margin: 10px;
+    }
+    .edu-box{
+        margin-bottom: 15px;
+    }
+       .heading-section h1.big {
+        top: -10px;
+        left: 153px;
+        font-size: 26px;
     }
     .heading-section h2 {
         text-align: center;
