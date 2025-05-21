@@ -463,6 +463,25 @@ text-align: center;
     display: none !important;
 }
 @media (max-width:600px){
+    .face{
+        width: 180px !important;
+        height: 180px !important;
+    }
+    .subheading, .ownNameM{
+        margin-left: 8px;
+    }
+    .backImg{
+        height: 50vh !important;
+        font-weight: bold;
+    }
+    .navbar-collapse {
+        margin-top: 10px !important;
+    }
+    .navbar-nav .nav-item .nav-link:hover {
+        color: orange;
+        font-weight: bold;
+        background-color: #fff;
+    }
     .projects-container {
         padding: 0px;
     }
@@ -507,6 +526,10 @@ text-align: center;
 @media (max-width:400px){
     .ownName {
         font-size: 1.8rem;
+    }
+    .backImg{
+        height: 51vh !important;
+        font-weight: bold;
     }
     .project-card img {
         width: 250px;
