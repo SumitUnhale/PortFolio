@@ -1,6 +1,9 @@
 :root{
     --color1: rgb(31 41 55 / var(--tw-bg-opacity, 1));
 }
+html, body{
+    overflow-x: hidden;
+}
 * {
     margin: 0;
     padding: 0;
@@ -460,6 +463,12 @@ text-align: center;
     display: none !important;
 }
 @media (max-width:600px){
+    .projects-container {
+        padding: 0px;
+    }
+    .project-card img {
+        width: 280px;
+    }
     #home-section {
         padding-top: 140px;
     }
@@ -498,6 +507,9 @@ text-align: center;
 @media (max-width:400px){
     .ownName {
         font-size: 1.8rem;
+    }
+    .project-card img {
+        width: 250px;
     }
 }
 
