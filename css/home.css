@@ -463,6 +463,9 @@ text-align: center;
     display: none !important;
 }
 @media (max-width:600px){
+    .mobFan{
+        margin-bottom: 30px;
+    }
     .face{
         width: 180px !important;
         height: 180px !important;
@@ -489,7 +492,7 @@ text-align: center;
         width: 280px;
     }
     #home-section {
-        padding-top: 140px;
+        padding-top: 250px;
     }
     .basic-edu{
         margin: 10px;
