@@ -97,16 +97,44 @@
         ],
         // github_front: "https://github.com/SumitUnhale/Garage_frontend.git",
         // github_back: "https://github.com/SumitUnhale/Garage_Backend.git"
+      },
+      SmartYoutube: {
+        title: "Smart Youtube",
+        description: `
+          <p>
+          I developed a YouTube frontend clone using React, focusing on UI and core client-side functionality. 
+          </p>
+          <p>The application includes a responsive layout with a collapsible menu bar, dynamic header, and structured body components.
+          </p>
+          <p> State management is implemented with Redux, supported by React hooks such as useState, useEffect, useRef, useSelector, useDispatch and many more. also uses the react router dom for the navigation the application. Uses the tailwindCSS library for the css functionality. Search functionality is powered by live Google API suggestions, and videos are rendered using the YouTube IFrame Player.
+          </p>
+          <p> The project also features a comment section and a simulated live chat system that mimics YouTube’s real-time messages. Higher-order components are used for advertisements and reusable UI logic.
+          </p>
+        `,
+        technologies: ["React", "Javascript", "Redux", "React-router", "TailwindCSS"],
+        images: [
+          "../images/you_1.png",
+          "../images/you_2.png",
+          "../images/you_3.png",
+          "../images/you_4.png",
+          "../images/you_5.png",
+          
+        ],
+        github_front: "https://github.com/SumitUnhale/clone_youtube.git"
       }
     };
-     const params = new URLSearchParams(window.location.search);
+    const params = new URLSearchParams(window.location.search);
     const id = params.get('id');
     const project = projects[id];
 
     if (project) {
       const techList = project.technologies.map((tech, i) => `<ul>${tech}</ul>`).join('');
       const images = project.images.map(img => `<img class="image" src="${img}" alt="${project.title} Screenshot">`).join('');
-      const githubLink = project.github_front ? `<p><a href="${project.github_front}" target="_blank" class="github-link">🔗 GitHub Frontend</a><a href="${project.github_back}" target="_blank" class="github-link link2">🔗 GitHub Backend</a></p>` : '';
+      const githubLink = `
+        ${project.github_front ? `<p><a href="${project.github_front}" target="_blank" class="github-link">🔗 GitHub Frontend</a>` : ''}
+        ${project.github_back ? `<a href="${project.github_back}" target="_blank" class="github-link link2">🔗 GitHub Backend</a></p>` : ''}
+      `;
+
 
 
       document.getElementById("project-content").innerHTML = `
